@@ -10,5 +10,12 @@
 
 <%= yield %>
 
+<%- if @preloaded.present? %>
+  <script>
+    <%- @preloaded.each do |key, json| %>
+      PreloadStore.store("<%= key %>",<%= escape_unicode(json) %>);
+    <% end %>
+  </script>
+<%- end %>
 </body>
 </html>

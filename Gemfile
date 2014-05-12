@@ -31,6 +31,7 @@ gem 'ember-source'
 gem 'haml-rails'
 
 gem "active_model_serializers"
+gem 'scrub_rb'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
