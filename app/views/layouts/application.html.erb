@@ -3,7 +3,7 @@
 <head>
   <title>EmberPreload</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'preload_store' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,5 +17,7 @@
     <% end %>
   </script>
 <%- end %>
+
+<%= javascript_include_tag 'application' %>
 </body>
 </html>

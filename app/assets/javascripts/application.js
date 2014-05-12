@@ -21,8 +21,28 @@
 //= require ./app
 
 // for more details see: http://emberjs.com/guides/application/
-App = Ember.Application.create({
-  rootElement : "#rails-preload",
+
+'use strict';
+
+var App = Ember.Application.create({
+  rootElement : '#rails-preload',
 });
+
+// Ember.Application.initializer({
+//   name: "initializerName",
+
+//   initialize: function(container, application) {
+//     var store = container.lookup('store:main');
+//     if (PreloadStore.get('posts')) {
+//       PreloadStore.getAndRemove('posts').then(function(json) {
+//         json.forEach(function(post) {
+//           if (!store.recordIsLoaded(App.Post, post.id)) {
+//             store.push('post', post);
+//           }
+//         });
+//       });
+//     }
+//   }
+// });
 
 //= require_tree .
