@@ -1,3 +1,4 @@
+//= require blog_app_init
 //= require ./store
 //= require_tree ./mixins
 //= require_tree ./models

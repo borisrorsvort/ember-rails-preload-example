@@ -1,0 +1,7 @@
+- if request.xhr?
+  = javascript_include_tag 'blog_app'
+- else
+  - content_for :scripts do
+    = javascript_include_tag 'blog_app'
+
+#blog_app

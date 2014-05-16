@@ -6,9 +6,22 @@
   <%= javascript_include_tag 'preload_store' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-no-turbolink>
 
-<%= yield %>
+<ul>
+  <li><%= link_to 'posts app', posts_path, data: {push: true, target: '.modal'} %></li>
+  <li><%= link_to 'welcome', welcome_index_path, data: {push: true} %></li>
+  <li><%= link_to 'about', welcome_about_path, data: {push: true} %></li>
+</ul>
+
+<div class="wiselinks-container">
+  <%= yield %>
+</div>
+
+
+<div class="modal" style="border: 1px solid red;">
+
+</div>
 
 <%- if @preloaded.present? %>
   <script>
@@ -19,5 +32,7 @@
 <%- end %>
 
 <%= javascript_include_tag 'application' %>
+<%= yield(:scripts) %>
+
 </body>
 </html>

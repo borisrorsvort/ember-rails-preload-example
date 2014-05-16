@@ -12,37 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require wiselinks
 //= require jquery
 //= require handlebars
 //= require ember
 //= require ember-data
 //= require_self
-//= require ./app
 
-// for more details see: http://emberjs.com/guides/application/
 
-'use strict';
+$(document).ready(function () {
+  window.wiselinks = new Wiselinks('.wiselinks-container');
 
-var App = Ember.Application.create({
-  rootElement : '#rails-preload',
 });
 
-// Ember.Application.initializer({
-//   name: "initializerName",
-
-//   initialize: function(container, application) {
-//     var store = container.lookup('store:main');
-//     if (PreloadStore.get('posts')) {
-//       PreloadStore.getAndRemove('posts').then(function(json) {
-//         json.forEach(function(post) {
-//           if (!store.recordIsLoaded(App.Post, post.id)) {
-//             store.push('post', post);
-//           }
-//         });
-//       });
-//     }
-//   }
-// });
-
-//= require_tree .
+$(document).off('page:loading').on('page:loading', function () {
+  if (typeof(App) !== 'undefined' ) {
+    console.log('app teared down');
+    App.destroy();
+  }
+});

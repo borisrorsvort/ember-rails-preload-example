@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( preload_store.js )
+Rails.application.config.assets.precompile += %w( preload_store.js blog_app.js )
