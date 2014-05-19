@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'preload_store' %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body data-no-turbolink>
 
@@ -31,7 +32,6 @@
   </script>
 <%- end %>
 
-<%= javascript_include_tag 'application' %>
 <%= yield(:scripts) %>
 
 </body>

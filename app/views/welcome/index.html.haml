@@ -1,1 +1,23 @@
 Welcome
+
+= link_to 'posts app', posts_path, {data: {target: '.modal'}}
+= link_to 'about', welcome_about_path
+
+:javascript
+  var Welcome = {
+    init: function() {
+      $('.wiselinks-container a').click(function() {
+        var link,
+            page = window.wiselinks.page;
+
+        if ((link = new _Wiselinks.Link(page, $(this)))) {
+          event.preventDefault();
+          link.process();
+          return false;
+        }
+      });
+    }
+  }
+
+  Welcome.init();
+
